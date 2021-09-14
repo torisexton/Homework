@@ -1,0 +1,57 @@
+#!/usr/bin/env python
+# coding: utf-8
+
+# In[1]:
+
+
+colors = ["purple", "yellow", "orange", "green"] # problem 1
+print(type(colors))
+print(colors)
+
+
+# In[2]:
+
+
+nums = list(range(30, 63, 3)) # problem 2.1
+print(nums)
+
+
+# In[4]:
+
+
+nums_tuple = tuple(nums) # problem 2.2
+print(type(nums_tuple))
+print(nums_tuple)
+
+
+# In[12]:
+
+
+empty_list = [] # problem 3
+print(empty_list)
+for number in range(0,6):
+    empty_list += [number]
+print(empty_list)
+empty_list.remove(2)
+print(empty_list)
+empty_list.insert(2, 2.0)
+print(empty_list)
+print(len(empty_list))
+print(max(empty_list))
+print(min(empty_list))
+
+
+# In[14]:
+
+
+nums2 = list(range(1,11))
+print(nums2)
+nums2_sum = sum(nums2)
+print(nums2_sum)
+
+
+# In[ ]:
+
+
+
+
