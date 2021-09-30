@@ -1,0 +1,133 @@
+#!/usr/bin/env python
+# coding: utf-8
+
+# In[1]:
+
+
+marks = {'Andy':88, 'Amy':66, 'James':90, 'Jules':55, 'Arthur':77}
+print(marks)
+
+
+# In[3]:
+
+
+for name, grade in mark.item():
+    print(name, grade)
+
+
+# In[27]:
+
+
+marks = {'Andy':88, 'Amy':66, 'James':90, 'Jules':55, 'Arthur':77}
+print(min(marks.values()))
+print(max(marks.values()))
+print(sum(marks.values())/ len(marks.values()))
+
+
+# In[34]:
+
+
+student_name = "J"
+marks = {'Andy':88, 'Amy':66, 'James':90, 'Jules':55, 'Arthur':77}
+for student, grade in marks.items():
+    print(grade)
+    if student.startswith('J'):
+        break
+
+
+# In[46]:
+
+
+
+marks = {'Andy':88, 'Amy':66, 'James':90, 'Jules':55, 'Arthur':77}
+for student, grade in marks.items(): 
+    if 'J' in student:
+        continue
+    print(grade)
+    
+    
+    
+
+
+# In[54]:
+
+
+marks = {'Andy':88, 'Amy':66, 'James':90, 'Jules':55, 'Arthur':77}
+def my_function():
+    print(marks.values())
+    if marks.keys() == ' ':
+        print('cannot find this students name')
+    
+my_function() 
+
+
+# In[ ]:
+
+
+def loop1(num):
+    n = 0
+    while (n < num):
+        n = n + 1
+        print(n, n**n)
+    else:
+        print('greater than', num)
+loop1(8)
+
+
+# In[ ]:
+
+
+def loop2(num):
+    n = 0 
+    i = 0
+    while (n < num):
+        n = n + 1
+        i = i + n
+    print(i)
+
+loop2(8)
+        
+
+
+# In[ ]:
+
+
+def loop3(num):
+    n = 0
+    i = 0
+    for n in range(num):
+        n = n + 1
+        i = n + i
+        print(i)
+
+loop3(8)
+
+
+# In[ ]:
+
+
+def minimum(v1, v2, v3, v4):
+    min_value = v1
+    if v2 < min_value:
+        min_value = v2
+    if v3 < min_value:
+        min_value = v3
+    if v4 < min_value:
+        min_value = v4
+    return min_value
+
+
+minimum(5, 7, 8, 10)
+
+
+# In[ ]:
+
+
+
+
+
+# In[ ]:
+
+
+
+
