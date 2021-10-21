@@ -1,0 +1,225 @@
+#!/usr/bin/env python
+# coding: utf-8
+
+# In[3]:
+
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+x1 = np.array([0.0, 4.0])
+y1 = np.array([1, 4])
+x2 = np.array([0.0, 4.0])
+y2 = np.array([5, 8])
+x3 = np.array([0.0, 4.0])
+y3 = np.array([9, 12])
+
+plt.plot(x1, y1, x2, y2, x3, y3)
+plt.show()
+
+
+# In[4]:
+
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+x = np.random.normal(0, 0.2, 800)
+
+plt.hist(x)
+plt.show()
+
+
+# In[11]:
+
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+y = np.array([45, 25, 15, 20])
+mylabels = ["Apples", "Bananas", "Cherries", "Dates"]
+myexplode = [0.1, 0.1, 0.1, 0.1]
+
+plt.pie(y, labels = mylabels, explode = myexplode)
+plt.legend()
+plt.show()
+
+
+# In[13]:
+
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+
+
+x = np.array(["Apples", "Bananas", "Cherries", "Dates"])
+y = np.array([45, 25, 15, 20])
+
+plt.bar(x,y)
+plt.show()
+
+
+# In[18]:
+
+
+
+
+
+# In[24]:
+
+
+fruit = {"Apples": 45, "Bananas":25, "Cherries":15, "Dates":20}
+for fruit_name in fruit.keys():
+    print(fruit_name, end=' ')
+
+
+for fruit_number in fruit.values():
+    print(fruit_number, end=' ')
+    
+import matplotlib.pyplot as plt
+import numpy as np
+
+
+x = np.array([fruit_name])
+y = np.array([fruit_number])
+
+plt.bar(x,y)
+plt.show()
+
+
+# In[27]:
+
+
+fruit = {"Apples": 45, "Bananas":25, "Cherries":15, "Dates":20}
+
+fruit_name = fruit.keys()
+fruit_number = fruit.values()
+
+print(fruit_name)
+print(fruit_number)
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+
+x = np.array([fruit_name])
+y = np.array([fruit_number])
+
+plt.bar(x,y)
+plt.show()
+
+
+# In[16]:
+
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+x = np.array([10, 20, 30, 40, 50, 60, 70, 80, 90, 100])
+art_marks = ([88, 92, 80, 89, 90, 80, 60, 88, 80, 84])
+plt.scatter(x, art_marks, color = 'r')
+
+x = np.array([10, 20, 30, 40, 50, 60, 70, 80, 90, 100])
+science_marks = ([75, 59, 69, 48, 65, 56, 32, 45, 20, 30] )
+plt.scatter(x, science_marks, color = 'g')
+
+#plt.legend("Art marks", "Science marks")
+plt.legend([art_marks, science_marks], ["Art Marks", "Science Marks"])
+plt.title("Scatter Plot") #title
+plt.xlabel("Marks Range") #x label
+plt.ylabel("Marks Scored") #y label
+
+
+
+plt.show()
+
+
+
+# In[25]:
+
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+#plot 1:
+x = np.array([5,7,8,7,2,17,2,9,4,11,12,9,6])
+y = np.array([99,86,87,88,111,86,103,87,94,78,77,85,86])
+#plt.scatter(x, y)
+
+plt.subplot(1, 2, 1)
+plt.scatter(x,y)
+
+#plot 2:
+x1 = np.array([0, 1, 2, 3])
+y1 = np.array([10, 20, 30, 40])
+x2 = np.array([0, 1, 2, 3])
+y2 = np.array([6, 2, 7, 11])
+
+
+plt.subplot(1, 2, 2)
+plt.plot(x1,y1, x2, y2)
+
+x3 = np.array(["A", "B"])
+y3 = np.array([3, 8, ])
+
+
+plt.subplot(1, 2, 3)
+plt.bar(x3,y3)
+
+
+plt.show()
+
+
+# In[30]:
+
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+x = np.array([0, 1, 2, 3])
+y = np.array([3, 8, 1, 10])
+
+plt.subplot(2, 3, 1)
+plt.scatter(x,y)
+
+x1 = np.array([0, 1, 2, 3])
+y1 = np.array([10, 20, 30, 40])
+x2 = np.array([0, 1, 2, 3])
+y2 = np.array([6, 2, 7, 11])
+
+
+plt.subplot(1, 2, 2)
+plt.plot(x1,y1, x2, y2)
+
+plt.subplot(2, 3, 2)
+plt.plot(x,y)
+
+x = np.array([0, 1, 2, 3])
+y = np.array([3, 8, 1, 10])
+
+plt.bar(2, 3, 3)
+plt.plot(x,y)
+
+x = np.array([0, 1, 2, 3])
+y = np.array([10, 20, 30, 40])
+
+plt.subplot(2, 3, 4)
+plt.plot(x,y)
+
+x = np.array([0, 1, 2, 3])
+y = np.array([3, 8, 1, 10])
+
+plt.subplot(2, 3, 5)
+plt.plot(x,y)
+
+
+
+plt.show()
+
+
+# In[ ]:
+
+
+
+
