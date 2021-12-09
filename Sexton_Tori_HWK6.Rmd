@@ -1,0 +1,107 @@
+---
+title: "Untitled"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+```{r}
+ # Create a matrix
+thismatrix <- matrix(c(7,2,9,4,12,13), nrow = 2, ncol = 3)
+
+# Print the matrix
+thismatrix
+
+ # Create a matrix
+ thismatrix2 <- matrix(c(1,2,3,7,8,9,12,13,14,19,20,21), nrow = 3, ncol = 4)
+ 
+ # Print the matrix
+ thismatrix2
+```
+```{r}
+c(thismatrix) * thismatrix2
+```
+
+
+```{r}
+names(amazon.orders) <- amazon.orders[1,]
+amazon.orders <- amazon.orders[-1,]
+
+```
+
+```{r}
+amazon.orders$`Tax Charged` = as.numeric(gsub("\\$", "", amazon.orders$`Tax Charged`))
+amazon.orders$`Total Charged` = as.numeric(gsub("\\$", "", amazon.orders$`Total Charged`))
+```
+
+```{r}
+sum(amazon.orders$`Tax Charged`) 
+```
+
+```{r}
+sum(amazon.orders$`Total Charged`)
+```
+
+```{r}
+52.61 / 1777.73
+```
+```{r}
+ sum(amazon.orders$`Tax Charged`) / sum(amazon.orders$`Total Charged`) 
+```
+
+```{r}
+counts <- table(amazon.orders$`Order Date`)
+barplot(counts, main = "Orders by day", xlab = "Order Date")
+```
+
+```{r}
+amazon.orders$`Total Charged` = as.numeric(gsub("\\$", "", amazon.orders$`Total Charged`))
+df <- c(amazon.orders$`Order Date`)
+head(df)
+
+df2 <- c(amazon.orders$`Total Charged`)
+head(df2)
+```
+
+```{r}
+barplot(df2, names.arg = df, col = "thistle3",  main = "Total Charged By Order data",xlab = "Order Date", ylab = "Total Charged in $")
+```
+
+```{r}
+amazon.orders$Date <- as.Date(amazon.orders$`Order Date`)
+df3 <- aggregate(amazon.orders$`Total Charged`, by=list(amazon.orders$Date), sum)
+
+#df <- c(amazon.orders$Date)
+#head(df)
+
+#df2 <- c(amazon.orders$`Total Charged`)
+#head(df2)
+
+#barplot(amazon.orders$Date, names.arg =  col = "thistle3",  main = "Total Charged By Order data",xlab = "Order Date", ylab = "Total Charged in $")
+
+head(df3)
+barplot(df3$x, names.arg = df3$Group.1, col = "thistle3", las=2, main = "Total Charged By Order Date", xlab = "Order Date", ylab = "Total Charged in $") 
+```
+
