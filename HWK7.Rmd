@@ -1,0 +1,181 @@
+---
+title: "HWK 7"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+```{r}
+id <-c(1, 2, 3, 4, 5)
+name <- c('peter', 'amy', 'ryan', 'gary', 'michelle')
+salary <- c(623.30, 515.20, 611.00, 729.00, 843.25)
+
+salary.data <- data.frame(id, name, salary)
+
+head(salary.data)
+str(salary.data)
+```
+```{r}
+salary.data$department <- c("IT", "HR", "Computer Science", "English", "Math")
+head(salary.data)
+```
+
+```{r}
+id <-c(1, 2, 3, 4, 5)
+name <- c('peter', 'amy', 'ryan', 'gary', 'michelle')
+salary <- c(623.30, 515.20, 611.00, 729.00, 843.25)
+
+salary.data <- data.frame(id, name, salary)
+
+head(salary.data)
+str(salary.data)
+
+salary.data$department <- c("IT", "HR", "Computer Science", "English", "Math")
+head(salary.data)
+
+salary.data <- salary.data[-c(1, 3, 5), ]
+head(salary.data)
+
+cols.dont.want <- c("name", "salary")
+
+salary.data <- salary.data[, ! names(salary.data) %in% cols.dont.want, drop = F]
+head(salary.data)
+```
+
+```{r}
+
+id <-c(1, 2, 3, 4, 5)
+name <- c('peter', 'amy', 'ryan', 'gary', 'michelle')
+salary <- c(623.30, 515.20, 611.00, 729.00, 843.25)
+
+salary.data <- data.frame(id, name, salary)
+
+head(salary.data)
+str(salary.data)
+
+salary.data$department <- c("IT", "HR", "Computer Science", "English", "Math")
+head(salary.data)
+
+salary.data2 <- salary.data[-c(2, 3), ]
+print(salary.data2)
+
+#df <- salary.data$salary
+#head(df)
+#df_2 <- salary.data2
+#head(df_2)
+
+#barplot(salary.data2$salary, names.arg = df_2)
+
+barplot(salary.data2$salary, names.arg = salary.data2$name, main = "Salary Data")
+
+```
+
+```{r}
+max(salary.data$salary)
+min(salary.data$salary)
+median(salary.data$salary)
+```
+
+```{r}
+#pie chart
+slices <-c(max(salary.data$salary), min(salary.data$salary), median(salary.data$salary))
+lbls <-c("michelle", "amy", "peter")
+pie(slices, labels = lbls, main = "Pie Chart of Salary Data")
+```
+
+```{r}
+install.packages("TurtleGraphics")
+
+```
+
+```{r}
+library("TurtleGraphics")
+```
+
+```{r}
+draw_rectangle <- function(length, height) {
+for (i in 1:2) {
+turtle_col(col="red")
+
+turtle_forward(length)
+turtle_right(90)
+turtle_forward(height)
+turtle_right(90)
+
+  }
+}
+
+
+turtle_init()
+draw_rectangle(10)
+turtle_left(90)
+turtle_forward(30)
+turtle_square(5)
+```
+
+```{r}
+turtle_square <- function(r) {
+for (i in 1:4) {
+turtle_forward(r)
+turtle_right(90)
+}
+}
+
+turtle_init()
+turtle_square(10)
+turtle_left(90)
+turtle_forward(30)
+turtle_square(5)
+```
+
+```{r}
+turtle_rectangle <- function(l, h) {
+for (i in 1:2) {
+turtle_forward(l)
+turtle_right(90)
+turtle_forward(h)
+turtle_right(90)
+}
+}
+
+
+turtle_init()
+turtle_rectangle(10, 20)
+```
+
+```{r}
+get_color <- "red"
+
+if (get_color == "red") {
+  print(1, 0, 0)
+} else if  (get_color == "white") {
+  print(1, 1, 1)
+} else  {
+    (get_color == "blue")
+  print(0,0,0)
+}
+
+```
+
