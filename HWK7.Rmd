@@ -114,41 +114,6 @@ install.packages("TurtleGraphics")
 library("TurtleGraphics")
 ```
 
-```{r}
-draw_rectangle <- function(length, height) {
-for (i in 1:2) {
-turtle_col(col="red")
-
-turtle_forward(length)
-turtle_right(90)
-turtle_forward(height)
-turtle_right(90)
-
-  }
-}
-
-
-turtle_init()
-draw_rectangle(10)
-turtle_left(90)
-turtle_forward(30)
-turtle_square(5)
-```
-
-```{r}
-turtle_square <- function(r) {
-for (i in 1:4) {
-turtle_forward(r)
-turtle_right(90)
-}
-}
-
-turtle_init()
-turtle_square(10)
-turtle_left(90)
-turtle_forward(30)
-turtle_square(5)
-```
 
 ```{r}
 turtle_rectangle <- function(l, h) {
